@@ -17,7 +17,7 @@ class Scan
 
   def scan
     Open3.popen3('nmap', '-iL', '-') do |i,o,e,t|
-      i.puts @target
+      i.puts @address
       i.close
       @report = o.read
     end
